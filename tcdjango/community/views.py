@@ -21,12 +21,12 @@ def home(request, domain = None):
     offeringList = OfferingPost.objects.all()
 
     now = datetime.datetime.now()
-   # upComingEvents =  EventPost.objects.filter('start_time'>now)
-   # print  upComingEvents
-    #return  render_to_response('content_index.html', locals())
+  
+    upComingEvents =  EventPost.objects.filter(start_time__gte = now)
+  
     return  render_to_response('content_index.html', locals())
 
 def view_article(request, slug):
-    article = get_object_or_404(Post, slug = slug)
+    article = get_object_or_404(ArticlePost, slug = slug)
     domains = get_all_domains()
     return  render_to_response('article.html', locals())
