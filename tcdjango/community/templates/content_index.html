@@ -1,4 +1,7 @@
+{% extends 'index.html' %}
+{% load i18n %}
 
+{% block content %}
 <h1>Domains<h1>
 <ul>
 {% for domain in domains %}
@@ -11,6 +14,7 @@
 <h1>Articles</h1>
 <ul>
 {% for article in articles %}
-   <li>{{ article.title }}</li>
+   <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
+{% endblock content %}
