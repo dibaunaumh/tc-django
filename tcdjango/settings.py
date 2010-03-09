@@ -89,4 +89,5 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'community',
+    'django.contrib.comments',
 )
