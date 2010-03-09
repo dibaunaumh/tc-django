@@ -1,0 +1,16 @@
+
+<h1>Domains<h1>
+<ul>
+{% for domain in domains %}
+   <li>{{ domain.name }}</li>
+{% endfor %}
+</ul>
+
+<hr>
+
+<h1>Articles</h1>
+<ul>
+{% for article in articles %}
+   <li>{{ article.title }}</li>
+{% endfor %}
+</ul>
