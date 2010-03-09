@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
+    (r'^comments/', include('django.contrib.comments.urls')),
     (r'domain/(?P<domain>\w+)/$', 'tcdjango.community.views.home'),
     (r'article/(?P<slug>\w+)/$', 'tcdjango.community.views.view_article'),
     (r'', 'tcdjango.community.views.home'),
