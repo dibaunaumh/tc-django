@@ -20,6 +20,9 @@ class Post(models.Model):
     sticky = models.BooleanField(_('sticky'), default = False)
     published = models.BooleanField(_('published'), default = True)
 
+    def get_absolute_url(self):
+        return "http://localhost:8000/article/%s" %self.slug    
+
 
     def __unicode__(self):
         return self.title
