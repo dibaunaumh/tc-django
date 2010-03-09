@@ -8,10 +8,10 @@ def home(request, domain = None):
 
     domains = get_all_domains()
 
-    domainObj = get_object_or_404(Domain, name = domain)
-
     if domain:
+        domainObj = get_object_or_404(Domain, name = domain)
         articles = ArticlePost.objects.filter(domains = domainObj)
+
     else:
         articles = ArticlePost.objects.all()
 

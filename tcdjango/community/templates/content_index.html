@@ -2,19 +2,63 @@
 {% load i18n %}
 
 {% block content %}
-<h1>Domains<h1>
+
+<table>
+<tr>
+<td width="70%">
+<h1>Top Articles</h1>
 <ul>
-{% for domain in domains %}
-   <li>{{ domain.name }}</li>
+{% for article in topStory %}
+   <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
 
-<hr>
+<hr/>
 
-<h1>Articles</h1>
+<p/>
+<h1>Active Articles</h1>
+<ul>
+{% for article in actives %}
+   <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+
+<hr/>
+
+<p/>
+<h1>All Articles</h1>
 <ul>
 {% for article in articles %}
    <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
+
+<hr/>
+
+<p/>
+
+
+</td>
+<td>
+<h1>Tikal Offerings</h1>
+<ul>
+{% for article in offeringList %}
+<li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+
+<h1>Upcoming Events</h1>
+<ul>
+{% for article in upComingEvents %}
+<li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>
+
+<td>
+
+</td>
+
+</tr>
+</table>
+
 {% endblock content %}

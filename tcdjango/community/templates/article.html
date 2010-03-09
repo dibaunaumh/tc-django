@@ -3,15 +3,15 @@
 
 {% block content %}
 <h1>{{article.title}}</h1>
+
+<p>
+{{article.content}}
+</p>
+
+<p/>
 posted at {{article.created}} By {{article.author}}
 
-        {{article.content}}
-
-
-
 {% load comments %}
-        
-{% get_comment_count for event as comment_count %}
 
-<p>This event has {{ comment_count }} comments.</p>
+
 {% endblock content %}
