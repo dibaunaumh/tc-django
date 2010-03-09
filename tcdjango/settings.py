@@ -75,6 +75,7 @@ ROOT_URLCONF = 'tcdjango.urls'
 
 TEMPLATE_DIRS = (
     '%s/community/templates/' % base_dir,
+    '%s/templates/' % base_dir,
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
